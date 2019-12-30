@@ -1,17 +1,25 @@
 import React from 'react';
-import UploadNew from './uploadNew';
+import uploadNew from './uploadNew';
+import landing from './landing';
+import newAccount from './newAccount';
+import { Route } from 'react-router-dom'
 
-function App() {
+class App extends React.Component {
+  render(){
+
   return (
     <main className='App'>
     <header role="banner">
             <h1>Line Please!</h1>
              <p>Making sure you know your words</p>
-        </header>
+    </header>
+    <Route path='/' component={landing} />
+    <Route path='/new-account' component={newAccount} />
+    <Route path='/upload' component={uploadNew} />
 
-        <UploadNew />
     </main>
   );
+}
 }
 
 export default App;
