@@ -22,7 +22,10 @@ class telePrompt extends React.Component {
          
         <section className="display" > 
 
-       {/*The text displayer will need to be it's own module -->*/}
+       {/*The text displayer will need to be it's own module,
+        pass the selection of 'lineOrSection' as a prop
+        or maybe have two different modules and depending on the selection, we use on or the other
+         */}
           <ul className="orationDisplay">  
             <li className="line"> Lorem ipsum etc. etc.</li>
             <li className="line"> second line lorem ipsu, </li>

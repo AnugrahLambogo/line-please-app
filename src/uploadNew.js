@@ -3,7 +3,7 @@ import './uploadNew.css';
 
 
 class uploadNew extends React.Component {
-state = {};
+state = {numOfSections: 3};
 
 createSectionArrays = ({ target }) => {
     console.log("this function just ran!");
@@ -14,6 +14,32 @@ createSectionArrays = ({ target }) => {
     console.log(this.state);
 }
 
+renderSections = () => {
+return (
+Array.from({length: this.state.numOfSections})
+     .map((e, index) => (
+              <section>        
+              <label htmlFor={'section'+(index+1)}> Section {index + 1}:</label>
+              <textarea
+              type="text" 
+              name={'section'+(index+1)}
+              className="sections"
+              onChange={this.createSectionArrays}>
+              </textarea>
+              </section>    
+)))}
+
+increaseSection = (e) => {
+  e.preventDefault();
+  this.setState({numOfSections: this.state.numOfSections +1});
+}
+
+decreaseSection = (e) => {
+  e.preventDefault();
+  this.setState({numOfSections: this.state.numOfSections -1});
+}
+
+
 render(){
     return (
         <section>
@@ -22,35 +48,10 @@ render(){
           </p>
 
           <form>
-            <label htmlFor="section1">Section 1:</label>
-            <textarea
-            type="text" 
-            name="section1" 
-            className="sections"
-            onChange={this.createSectionArrays}></textarea>
-
-            <label htmlFor="section2">Section 2:</label>
-            <textarea
-            type="text" 
-            name="section2" 
-            className="sections"
-            onChange={this.createSectionArrays}></textarea>
-
-            <label htmlFor="section3">Section 3:</label>
-            <textarea
-            type="text" 
-            name="section3" 
-            className="sections"
-            onChange={this.createSectionArrays}></textarea>
-
-            <label htmlFor="section4">Section 4:</label>
-            <textarea
-            type="text" 
-            name="section4" 
-            className="sections"
-            onChange={this.createSectionArrays}></textarea>
-
-            <button id="addSection">Add another section</button>
+            {this.renderSections()} 
+  
+            <button id="addSection" onClick={this.increaseSection}>Add another section</button>
+            <button id="subtractSection" onClick={this.decreaseSection}>Remove section</button>
             <button type="submit" >Create!</button>
             </form>
         </section>
