@@ -1,0 +1,12 @@
+.line {
+    font-size: 30px;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .display {
+    margin: 10px;
+    border: solid 2px black;
+  }

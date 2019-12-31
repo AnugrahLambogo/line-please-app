@@ -2,6 +2,7 @@ import React from 'react';
 import uploadNew from './uploadNew';
 import landing from './landing';
 import newAccount from './newAccount';
+import telePrompt from './telePrompt';
 //import dummyStore from './DummyStore';
 import { Route } from 'react-router-dom'
 
@@ -23,6 +24,7 @@ class App extends React.Component {
     <Route path='/' component={landing} />
     <Route path='/new-account' component={newAccount} />
     <Route path='/upload' component={uploadNew} />
+    <Route path='/teleprompt' component={telePrompt} />
 
     </main>
   );
