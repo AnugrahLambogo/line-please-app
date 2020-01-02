@@ -16,7 +16,18 @@ class telePrompt extends React.Component {
 //false means we're displaying by section, true means by line
 
 nextPart = () => {
-if (this.state.lineOnly === false) {
+let sectionNames = Object.keys(this.state.data);
+let linemax = sectionNames[this.state.sectNum].length - 1;
+console.log(linemax);
+if (this.state.lineNum >= linemax) {
+  this.setState({
+    sectNum: this.state.sectNum + 1,
+    lineNum: 0,
+    }
+  );
+}
+
+else if (this.state.lineOnly === false) {
 this.setState(
   {sectNum: this.state.sectNum + 1}
 );
@@ -58,8 +69,8 @@ displayText = (text, lineOrSection) => {
       console.log(text[currentSect]);
       let sectArr = text[currentSect];
 
-      if (lineOrSection === 'false') {
-          return (<li className="line"> {sectArr} </li>)
+      if (lineOrSection === false) {
+          return (<li className="line"> {sectArr.map(line => <p>{line}</p>)} </li>)
           }
          
       else {
