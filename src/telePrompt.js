@@ -8,7 +8,9 @@ class telePrompt extends React.Component {
       data: dummyStore,
       sectNum: 0,
       lineNum: 0,
-      lineOnly: false
+      lineOnly: false,
+      running: false,
+      time: 0
     };
 //with the lineonly property, 
 //false means we're displaying by section, true means by line
@@ -50,7 +52,7 @@ toggleLineOrSection = () => {
 
 
 
-  displayText = (text, time, lineOrSection) => {
+displayText = (text, lineOrSection) => {
       let sectionKeys = Object.keys(text);
       let currentSect = sectionKeys[this.state.sectNum];
       console.log(text[currentSect]);
@@ -64,6 +66,16 @@ toggleLineOrSection = () => {
         return (<li className="line"> {sectArr[this.state.lineNum]} </li>)
       }
       
+  }
+
+updateTime = ({target}) => {
+  this.setState({
+    time: target.value * 1000
+  })
+}
+
+timeDisplay = () => {
+  setInterval(this.nextPart, this.state.time);
   }
  
   
@@ -80,14 +92,14 @@ toggleLineOrSection = () => {
             </select>
              
           <label htmlFor="displayTime">How many seconds to display:</label>
-          <input type="number" name="displayTime" id="displayTime">
+          <input type="number" name="displayTime" id="displayTime" onChange={this.updateTime}>
           </input>
-          <button id="startButton">Start/Pause</button>
+          <button id="startButton" onClick={this.timeDisplay}>Start/Pause</button>
          
         <section className="display" > 
 
           <ul className="orationDisplay">  
-            {this.displayText(this.state.data, 5000, this.state.lineOnly)}
+            {this.displayText(this.state.data, this.state.lineOnly)}
           </ul>  
 
         </section>
