@@ -124,15 +124,14 @@ updateTime = ({target}) => {
 }
 
 timeDisplay = () => {
-  let timeStart;
   console.log(this.state.running);
 
   if (this.state.running === true) {
-    timeStart = setInterval(this.nextPart, this.state.time);
+    this.timeStart = setInterval(this.nextPart, this.state.time);
   }
   
   else {
-    clearInterval(timeStart);
+    clearInterval(this.timeStart);
     console.log('please make it stop');
   }
  }
