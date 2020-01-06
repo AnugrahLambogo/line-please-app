@@ -3,7 +3,6 @@ import uploadNew from './uploadNew';
 import landing from './landing';
 import newAccount from './newAccount';
 import telePrompt from './telePrompt';
-//import dummyStore from './DummyStore';
 import { Route } from 'react-router-dom'
 
 class App extends React.Component {
