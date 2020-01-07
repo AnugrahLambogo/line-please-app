@@ -3,7 +3,10 @@ import './uploadNew.css';
 
 
 class uploadNew extends React.Component {
-state = {numOfSections: 3};
+state = {
+numOfSections: 3,
+title: '',
+};
 
 createSectionArrays = ({ target }) => {
     console.log("this function just ran!");
@@ -13,6 +16,20 @@ createSectionArrays = ({ target }) => {
     );
     console.log(this.state);
 }
+
+sendText = (e) => {
+  e.preventDefault();
+  const uploadText = this.state
+  
+  fetch('http://localhost:8000/upload', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(uploadText)
+  })
+}
+
 
 renderSections = () => {
 return (
@@ -47,7 +64,10 @@ render(){
           <p>Write or copy/paste the text you want to memorize below. Separate your text by 'sections' as you see fit, and make sure each 'line' is separated by an enter/return. 
           </p>
 
-          <form>
+          <form onSubmit={this.sendText}>
+            <label htmlFor="textTitle">Title:</label>
+            <input id="textTitle" type="text" onChange={e => this.setState({title: e.target.value})}></input>
+            
             {this.renderSections()} 
   
             <button id="addSection" onClick={this.increaseSection}>Add another section</button>

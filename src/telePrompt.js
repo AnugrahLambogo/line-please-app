@@ -158,6 +158,7 @@ toggleLineOrSection = () => {
 
 
 displayText = (text, lineOrSection) => {
+      console.log(this.state.data)
       let sectionKeys = Object.keys(text);
       let currentSect = sectionKeys[this.state.sectNum];
       let sectArr = text[currentSect];
