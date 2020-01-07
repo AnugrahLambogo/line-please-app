@@ -3,6 +3,7 @@ import uploadNew from './uploadNew';
 import landing from './landing';
 import newAccount from './newAccount';
 import telePrompt from './telePrompt';
+import listText from './listText';
 import { Route } from 'react-router-dom'
 
 class App extends React.Component {
@@ -24,7 +25,7 @@ class App extends React.Component {
     <Route path='/new-account' component={newAccount} />
     <Route path='/upload' component={uploadNew} />
     <Route path='/teleprompt' component={telePrompt} />
-
+    <Route path='/listText' component={listText} />
     </main>
   );
 }
