@@ -19,10 +19,10 @@ class telePrompt extends React.Component {
 
 changeText = (e) => {
   e.preventDefault();
-  const baseURL = 'http://localhost:3000/teleprompt';
+  const baseURL = 'http://localhost:8000/teleprompt';
   const query = `text=${this.state.chosenText}`;
 
-  const url = `${baseURL}?${query}`;
+  const url = `${baseURL}/?${query}`;
 
   fetch(url)
     .then(res => {
@@ -32,6 +32,7 @@ changeText = (e) => {
       return res.json();
     })
     .then(textData => {
+      console.log(textData);
       this.setState({
         data: textData,
       });
@@ -125,7 +126,6 @@ displayText = (text, lineOrSection) => {
       let sectionKeys = Object.keys(text);
       let currentSect = sectionKeys[this.state.sectNum];
       let sectArr = text[currentSect];
-      console.log(this.state.running);
       let beginningArr = sectArr.map(line => {
          let firstTwo = line.split(' ', 2);
          return firstTwo.join(' ');
@@ -157,7 +157,7 @@ updateTime = ({target}) => {
 }
 
 timeDisplay = () => {
-  console.log(this.state.running);
+
 
   if (this.state.running === true) {
     this.timeStart = setInterval(this.nextPart, this.state.time);
@@ -200,10 +200,11 @@ toggleFull = () => {
           <h2>Teleprompt Mode</h2>
           <h3 id="currentText">Title of Text</h3>
           <label htmlFor="chooseText">Switch text:</label>
-          <form onSubmit={e => this.changeText(e)}>
+          <form onSubmit={this.changeText}>
           <select name="chooseText" id="chooseText" onChange={this.chooseText}>
             <option>Text1</option>
-            <option>Text2</option>
+            <option>super bass</option>
+            <option>moment 4 life</option>
           </select>
           <button type="submit">Switch!</button>
           </form>
