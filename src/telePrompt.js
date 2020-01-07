@@ -13,6 +13,7 @@ class telePrompt extends React.Component {
       time: 0,
       fullLine: true,
       chosenText: '',
+      textTitles: [],
     };
 //with the lineonly property, 
 //false means we're displaying by section, true means by line
@@ -32,7 +33,6 @@ changeText = (e) => {
       return res.json();
     })
     .then(textData => {
-      console.log(textData);
       this.setState({
         data: textData,
       });
@@ -50,6 +50,41 @@ chooseText = (e) => {
   })
 } 
 
+getTitleNames = () => {
+  const URL = 'http://localhost:8000/textTitles';
+
+  fetch(URL)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error (res.statusText);
+      }
+      return res.json();
+    })
+    .then(titles => {
+      console.log(titles);
+      this.setState({
+        textTitles: titles,
+      });
+    })
+    .catch(err => {
+      this.setState({
+        error: 'Sorry could not find that',
+      });
+    })
+
+}
+
+displayTitleNamesAsOptions = (titles) => {
+
+  return (
+    titles.map(text => <option>{text}</option>)
+   
+  )}
+
+
+
+
+
 nextPart = () => {
 let sectionNames = Object.keys(this.state.data);
 let currSect = sectionNames[this.state.sectNum]
@@ -57,7 +92,7 @@ let lineMax = this.state.data[currSect].length - 1;
 let sectMax = sectionNames.length - 1;
 
 if (this.state.sectNum === sectMax) {
-
+//need to add what to do at the end
 }
 
 else if (this.state.lineNum >= lineMax) {
@@ -192,19 +227,23 @@ toggleFull = () => {
   })
 }
  
+componentDidMount () {
+  this.getTitleNames();
+}
  
   
-  render() {
+render() {
+
+
         return(
         <section>
           <h2>Teleprompt Mode</h2>
-          <h3 id="currentText">Title of Text</h3>
+          <h3 id="currentText">{this.state.data.title}</h3>
           <label htmlFor="chooseText">Switch text:</label>
           <form onSubmit={this.changeText}>
           <select name="chooseText" id="chooseText" onChange={this.chooseText}>
-            <option>Text1</option>
-            <option>super bass</option>
-            <option>moment 4 life</option>
+          
+            {this.displayTitleNamesAsOptions(this.state.textTitles)}
           </select>
           <button type="submit">Switch!</button>
           </form>

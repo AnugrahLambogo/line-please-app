@@ -18,6 +18,7 @@ let dummyStore = {
         'sect4 line2 lsj;asldkf',
         'sect4 line3 lskjdf;adjsf;djs'
     ],
+    title: 'Title'
 };
 
 export default dummyStore;
