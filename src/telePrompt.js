@@ -11,10 +11,43 @@ class telePrompt extends React.Component {
       lineOnly: false,
       running: false,
       time: 0,
-      fullLine: true
+      fullLine: true,
+      chosenText: '',
     };
 //with the lineonly property, 
 //false means we're displaying by section, true means by line
+
+changeText = (e) => {
+  e.preventDefault();
+  const baseURL = 'http://localhost:3000/teleprompt';
+  const query = `text=${this.state.chosenText}`;
+
+  const url = `${baseURL}?${query}`;
+
+  fetch(url)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error (res.statusText);
+      }
+      return res.json();
+    })
+    .then(textData => {
+      this.setState({
+        data: textData,
+      });
+    })
+    .catch(err => {
+      this.setState({
+        error: 'Sorry could not find that',
+      });
+    })
+}
+
+chooseText = (e) => {
+  this.setState({
+    chosenText: e.target.value,
+  })
+} 
 
 nextPart = () => {
 let sectionNames = Object.keys(this.state.data);
@@ -165,7 +198,15 @@ toggleFull = () => {
         return(
         <section>
           <h2>Teleprompt Mode</h2>
-          <h3 id="currentOration">Title of oration</h3>
+          <h3 id="currentText">Title of Text</h3>
+          <label htmlFor="chooseText">Switch text:</label>
+          <form onSubmit={e => this.changeText(e)}>
+          <select name="chooseText" id="chooseText" onChange={this.chooseText}>
+            <option>Text1</option>
+            <option>Text2</option>
+          </select>
+          <button type="submit">Switch!</button>
+          </form>
           
           <label htmlFor="lineOrSection">Display by:</label>
           <select name ="lineOrSection" id="lineOrSection" onChange={this.toggleLineOrSection}>
