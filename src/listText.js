@@ -43,6 +43,7 @@ getTitleNames = () => {
             },
             body: JSON.stringify(id)
         })
+        .then(e => this.getTitleNames())
     }
 
 componentDidMount () {
