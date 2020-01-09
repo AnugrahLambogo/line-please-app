@@ -196,7 +196,7 @@ updateTime = ({target}) => {
 timeDisplay = () => {
 
 
-  if (this.state.running === true) {
+  if (this.state.running === false) {
     this.timeStart = setInterval(this.nextPart, this.state.time);
   }
   
@@ -244,7 +244,7 @@ render() {
           <label htmlFor="chooseText">Switch text:</label>
           <form onSubmit={this.changeText}>
           <select name="chooseText" id="chooseText" onChange={this.chooseText}>
-          
+            <option>-Select Text-</option>
             {this.displayTitleNamesAsOptions(this.state.textTitles)}
           </select>
           <button type="submit">Switch!</button>
