@@ -7,16 +7,16 @@ const newAccount = () => {
           <h2>Create New Account</h2>
 
         <form>
-          <label for="userName">Your Name:</label>
+          <label htmlFor="userName">Your Name:</label>
           <input type="text" name="userName"></input>
           
-          <label for="email">Email Address:</label>
+          <label htmlFor="email">Email Address:</label>
           <input type="text" name="email"></input>
          
-          <label for="password">Password:</label>
+          <label htmlFor="password">Password:</label>
           <input type="text" name="password"></input>
           
-          <label for="confirmPass">Confirm Password:</label>
+          <label htmlFor="confirmPass">Confirm Password:</label>
           <input type="text" name="confirmPass"></input>
         
           <button type="submit">Create!</button>

@@ -24,7 +24,7 @@ changeText = (e) => {
   const query = `text=${this.state.chosenText}`;
 
   const url = `${baseURL}/?${query}`;
-
+  console.log('getting there')
   fetch(url)
     .then(res => {
       if (!res.ok) {
@@ -33,6 +33,8 @@ changeText = (e) => {
       return res.json();
     })
     .then(textData => {
+      console.log(textData.content);
+      console.log(dummyStore);
       this.setState({
         data: textData,
       });
@@ -158,7 +160,6 @@ toggleLineOrSection = () => {
 
 
 displayText = (text, lineOrSection) => {
-      console.log(this.state.data)
       let sectionKeys = Object.keys(text);
       let currentSect = sectionKeys[this.state.sectNum];
       let sectArr = text[currentSect];
@@ -177,7 +178,7 @@ displayText = (text, lineOrSection) => {
       }
 
       else if (lineOrSection === false) {
-          return (<li className="line"> {sectArr.map(line => <p>{line}</p>)} </li>)
+         return (<li className="line"> {sectArr.map(line => <p>{line}</p>)} </li>)
           }
          
       else {
@@ -280,4 +281,4 @@ render() {
     );
 }}
 
-export default telePrompt;
+export default telePrompt
