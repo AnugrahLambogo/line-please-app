@@ -79,7 +79,7 @@ getTitleNames = () => {
 displayTitleNamesAsOptions = (titles) => {
 
   return (
-    titles.map(text => <option>{text}</option>)
+    titles.map(titleObj => <option>{titleObj.title}</option>)
    
   )}
 
