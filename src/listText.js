@@ -31,17 +31,17 @@ getTitleNames = () => {
   displayTitleNames = (titles) => {
 
     return (
-      titles.map(text => <li>{text}<button onClick={e => this.deleteText(text)}>DELETE</button></li>)
+      titles.map(text => <li>{text.title}<button onClick={e => this.deleteText(text.id)}>DELETE</button></li>)
      
     )}
 
-    deleteText = (title) => {
+    deleteText = (id) => {
         fetch('http://localhost:8000/listText', {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(title)
+            body: JSON.stringify(id)
         })
     }
 
