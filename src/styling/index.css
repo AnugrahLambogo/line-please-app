@@ -21,12 +21,15 @@ button {
   border-radius: 5px;
   height: 30px;
   margin: 5px;
+
 }
 
 input {
   border: 1px solid black;
+  margin-left: 3px;
 }
 
 select {
   border: 1px solid black;
+  margin-left: 3px;
 }

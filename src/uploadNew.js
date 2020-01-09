@@ -1,5 +1,5 @@
 import React from 'react';
-import './uploadNew.css';
+import './styling/uploadNew.css';
 
 
 class uploadNew extends React.Component {

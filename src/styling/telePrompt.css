@@ -22,6 +22,11 @@ form {
 
 .display {
     background-color: white;
-    margin: 10%;
+    margin: 5%;
     border: solid 2px black;
   }
+
+.teleButton {
+  margin-bottom: 20px;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import './telePrompt.css';
+import './styling/telePrompt.css';
 import dummyStore from './DummyStore';
 
 
@@ -293,9 +293,9 @@ render() {
 
         </section>
         <section>
-          <button id="backButton" onClick={this.lastPart}>back</button>
-          <button id="forwardButton" onClick={this.nextPart}>next</button>
-          <button id="restartButton" onClick={this.restart}>Restart</button>
+          <button className="teleButton" onClick={this.lastPart}>back</button>
+          <button className="teleButton" onClick={this.nextPart}>next</button>
+          <button className="teleButton" onClick={this.restart}>Restart</button>
         </section>   </section>
     );
 }}
