@@ -14,6 +14,7 @@ class telePrompt extends React.Component {
       fullLine: true,
       chosenText: '',
       textTitles: [],
+      theEnd: false,
     };
 //with the lineonly property, 
 //false means we're displaying by section, true means by line
@@ -93,8 +94,24 @@ let currSect = sectionNames[this.state.sectNum]
 let lineMax = this.state.data[currSect].length - 1;
 let sectMax = sectionNames.length - 1;
 
-if (this.state.sectNum === sectMax) {
-//need to add what to do at the end
+
+if (this.state.lineOnly === false && this.state.sectNum === sectMax) {
+  this.setState(
+    {theEnd: true}
+  )
+}
+
+else if (this.state.lineNum === lineMax && this.state.sectNum === sectMax) {
+
+  this.setState(
+    {theEnd: true}
+  )
+}
+
+else if (this.state.sectNum === sectMax && this.state.lineOnly === true) {
+  this.setState(
+    {lineNum: this.state.lineNum +1}
+  );
 }
 
 else if (this.state.lineNum >= lineMax) {
@@ -168,8 +185,10 @@ displayText = (text, lineOrSection) => {
          return firstTwo.join(' ');
       });
 
-
-      if (this.state.fullLine === false && lineOrSection === false) {
+      if (this.state.theEnd === true) {
+        return (<li>THE END</li>)
+      }
+      else if (this.state.fullLine === false && lineOrSection === false) {
         return (<li className="line"> {beginningArr.map(line => <p>{line}</p>)} </li>)
       }
 
@@ -195,7 +214,6 @@ updateTime = ({target}) => {
 
 timeDisplay = () => {
 
-
   if (this.state.running === false) {
     this.timeStart = setInterval(this.nextPart, this.state.time);
   }
@@ -207,7 +225,8 @@ timeDisplay = () => {
  }
 
 
-toggleTimer = () => {
+toggleTimer = (e) => {
+  e.preventDefault();
   this.setState({
     running: !this.state.running
   });
@@ -218,7 +237,8 @@ restart = () => {
   this.setState(
     {
       sectNum: 0,
-      lineNum: 0
+      lineNum: 0,
+      theEnd: false,
     }
   )
 }
@@ -241,7 +261,7 @@ render() {
         <section>
           <h2 id="currentText">{this.state.chosenText}</h2>
           
-          <form onSubmit={this.changeText}>
+          <form onSubmit={e => this.changeText(e)}>
           <label htmlFor="chooseText">Switch text:</label>
           <select name="chooseText" id="chooseText" onChange={this.chooseText}>
             <option>-Select Text-</option>
@@ -269,7 +289,7 @@ render() {
             <option>Show full line</option>
             <option>Show only the beginning</option>
           </select>
-          <button id="startButton" onClick={this.toggleTimer}>Start/Pause</button>
+          <button id="startButton" onClick={e => this.toggleTimer(e) }>Start/Pause</button>
           </form>
 
         <section className="display" > 
