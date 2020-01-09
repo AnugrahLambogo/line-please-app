@@ -25,7 +25,6 @@ changeText = (e) => {
   const query = `text=${this.state.chosenText}`;
 
   const url = `${baseURL}/?${query}`;
-  console.log('getting there')
   fetch(url)
     .then(res => {
       if (!res.ok) {
@@ -34,8 +33,6 @@ changeText = (e) => {
       return res.json();
     })
     .then(textData => {
-      console.log(textData.content);
-      console.log(dummyStore);
       this.setState({
         data: textData,
       });
@@ -64,7 +61,6 @@ getTitleNames = () => {
       return res.json();
     })
     .then(titles => {
-      console.log(titles);
       this.setState({
         textTitles: titles,
       });
@@ -94,7 +90,6 @@ let currSect = sectionNames[this.state.sectNum]
 let lineMax = this.state.data[currSect].length - 1;
 let sectMax = sectionNames.length - 1;
 
-
 if (this.state.lineOnly === false && this.state.sectNum === sectMax) {
   this.setState(
     {theEnd: true}
@@ -102,7 +97,6 @@ if (this.state.lineOnly === false && this.state.sectNum === sectMax) {
 }
 
 else if (this.state.lineNum === lineMax && this.state.sectNum === sectMax) {
-
   this.setState(
     {theEnd: true}
   )
@@ -220,7 +214,6 @@ timeDisplay = () => {
   
   else {
     clearInterval(this.timeStart);
-    console.log('please make it stop');
   }
  }
 

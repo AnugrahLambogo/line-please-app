@@ -1,4 +1,5 @@
 body {
+  background: lightcyan;
   text-align: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,7 +14,16 @@ code {
     monospace;
 }
 
-button, input {
+button {
+  font-weight: bold;
+  background-color: rgb(253, 255, 126);
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 30px;
+  margin: 5px;
+}
+
+input {
   border: 1px solid black;
 }
 

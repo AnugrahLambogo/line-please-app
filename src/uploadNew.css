@@ -1,5 +1,13 @@
 .sections {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid black 1px;
     display: block;
     height: 150px;
     width: 75%;
+  }
+
+  .uploadButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }

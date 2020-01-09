@@ -15,7 +15,6 @@ getTitleNames = () => {
         return res.json();
       })
       .then(titles => {
-        console.log(titles);
         this.setState({
           textTitles: titles,
         });

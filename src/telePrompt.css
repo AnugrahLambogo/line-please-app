@@ -21,6 +21,7 @@ form {
 }
 
 .display {
+    background-color: white;
     margin: 10%;
     border: solid 2px black;
   }

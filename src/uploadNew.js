@@ -9,16 +9,13 @@ title: '',
 };
 
 createSectionArrays = ({ target }) => {
-    console.log("this function just ran!");
     let sectionArray = target.value.split("\n");
     this.setState(
         {[target.name]: sectionArray}
     );
-    console.log(this.state);
 }
 
 sendText = (e) => {
-  e.preventDefault();
   const uploadText = this.state
   
   fetch('http://localhost:8000/upload', {
@@ -35,7 +32,7 @@ renderSections = () => {
 return (
 Array.from({length: this.state.numOfSections})
      .map((e, index) => (
-              <section>        
+              <section className="uploadForm">        
               <label htmlFor={'section'+(index+1)}> Section {index + 1}:</label>
               <textarea
               type="text" 
@@ -70,9 +67,9 @@ render(){
             
             {this.renderSections()} 
   
-            <button id="addSection" onClick={this.increaseSection}>Add another section</button>
-            <button id="subtractSection" onClick={this.decreaseSection}>Remove section</button>
-            <button type="submit" >Create!</button>
+            <button className="uploadButton" onClick={this.increaseSection}>Add another section</button>
+            <button className="uploadButton" onClick={this.decreaseSection}>Remove section</button>
+            <button className="uploadButton" type="submit" >Create!</button>
             </form>
         </section>
     );
