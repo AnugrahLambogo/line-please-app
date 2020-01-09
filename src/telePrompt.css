@@ -1,12 +1,26 @@
 .line {
-    font-size: 30px;
+    font-size: 22px;
   }
   
-  li {
+li { 
     list-style: none;
   }
-  
-  .display {
-    margin: 10px;
+
+ul {
+  padding-left: 0;
+}
+
+p {
+  margin: 3%;
+  padding: 0;
+}
+
+form {
+  padding: 5px;
+  display: block;
+}
+
+.display {
+    margin: 10%;
     border: solid 2px black;
   }

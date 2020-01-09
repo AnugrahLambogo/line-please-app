@@ -239,10 +239,10 @@ render() {
 
         return(
         <section>
-          <h2>Teleprompt Mode</h2>
-          <h3 id="currentText">{this.state.data.title}</h3>
-          <label htmlFor="chooseText">Switch text:</label>
+          <h2 id="currentText">{this.state.chosenText}</h2>
+          
           <form onSubmit={this.changeText}>
+          <label htmlFor="chooseText">Switch text:</label>
           <select name="chooseText" id="chooseText" onChange={this.chooseText}>
             <option>-Select Text-</option>
             {this.displayTitleNamesAsOptions(this.state.textTitles)}
@@ -250,21 +250,28 @@ render() {
           <button type="submit">Switch!</button>
           </form>
           
+          <form>
           <label htmlFor="lineOrSection">Display by:</label>
           <select name ="lineOrSection" id="lineOrSection" onChange={this.toggleLineOrSection}>
             <option>Section</option>
             <option>Line</option>
             </select>
-             
+          </form>
+          
+          <form>
           <label htmlFor="displayTime">How many seconds to display:</label>
           <input type="number" name="displayTime" id="displayTime" onChange={this.updateTime}>
           </input>
+          </form>
+
+          <form>
           <select name="fullOrEmpty" id="fullOrEmpty" onChange={this.toggleFull}>
             <option>Show full line</option>
             <option>Show only the beginning</option>
           </select>
           <button id="startButton" onClick={this.toggleTimer}>Start/Pause</button>
-         
+          </form>
+
         <section className="display" > 
 
           <ul className="orationDisplay">  
@@ -273,7 +280,6 @@ render() {
 
         </section>
         <section>
-          <button id="pauseButton">Pause</button>
           <button id="backButton" onClick={this.lastPart}>back</button>
           <button id="forwardButton" onClick={this.nextPart}>next</button>
           <button id="restartButton" onClick={this.restart}>Restart</button>
