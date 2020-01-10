@@ -35,7 +35,7 @@ getTitleNames = () => {
     )}
 
     deleteText = (id) => {
-        fetch(`${config.API_ENDPOINT}listText`, {
+        fetch(`${config.API_ENDPOINT}/listText`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"
