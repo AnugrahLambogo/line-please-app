@@ -5,7 +5,7 @@ class listText extends React.Component {
 state = {textTitles: [],}
 
 getTitleNames = () => {
-    const URL = `${config.API_ENDPOINT}textTitles`;
+    const URL = `${config.API_ENDPOINT}/textTitles`;
   
     fetch(URL)
       .then(res => {

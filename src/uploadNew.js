@@ -19,7 +19,7 @@ createSectionArrays = ({ target }) => {
 sendText = (e) => {
   const uploadText = this.state
   
-  fetch(`${config.API_ENDPOINT}upload`, {
+  fetch(`${config.API_ENDPOINT}/upload`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
