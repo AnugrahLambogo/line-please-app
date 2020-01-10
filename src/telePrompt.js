@@ -1,3 +1,4 @@
+import config from './config';
 import React from 'react';
 import './styling/telePrompt.css';
 import dummyStore from './DummyStore';
@@ -20,7 +21,7 @@ class telePrompt extends React.Component {
 
 changeText = (e) => {
   e.preventDefault();
-  const baseURL = 'http://localhost:8000/teleprompt';
+  const baseURL = `${config.API_ENDPOINT}/teleprompt`;
   const query = `text=${this.state.chosenText}`;
 
   const url = `${baseURL}/?${query}`;
@@ -50,7 +51,7 @@ chooseText = (e) => {
 } 
 
 getTitleNames = () => {
-  const URL = 'http://localhost:8000/textTitles';
+  const URL = `${config.API_ENDPOINT}/textTitles`;
 
   fetch(URL)
     .then(res => {

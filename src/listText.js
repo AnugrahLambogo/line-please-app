@@ -1,11 +1,11 @@
 import React from 'react';
-
+import config from './config';
 
 class listText extends React.Component {
 state = {textTitles: [],}
 
 getTitleNames = () => {
-    const URL = 'http://localhost:8000/textTitles';
+    const URL = `${config.API_ENDPOINT}textTitles`;
   
     fetch(URL)
       .then(res => {
@@ -35,7 +35,7 @@ getTitleNames = () => {
     )}
 
     deleteText = (id) => {
-        fetch('http://localhost:8000/listText', {
+        fetch(`${config.API_ENDPOINT}listText`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"

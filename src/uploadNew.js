@@ -1,5 +1,6 @@
 import React from 'react';
 import './styling/uploadNew.css';
+import config from './config';
 
 
 class uploadNew extends React.Component {
@@ -18,7 +19,7 @@ createSectionArrays = ({ target }) => {
 sendText = (e) => {
   const uploadText = this.state
   
-  fetch('http://localhost:8000/upload', {
+  fetch(`${config.API_ENDPOINT}upload`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
