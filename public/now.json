@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "alias": "anugrah-line-please-app",
+    "name": "line-please-app",
+    "routes": [
+        { "handle": "filesystem" },
+        { "src": "/.*", "dest": "/index.html" }
+    ]
+  }
