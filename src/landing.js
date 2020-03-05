@@ -13,13 +13,13 @@ const landing = () => {
             the first two words of each line--prompting you to recall the rest of the line.
             </p>
            <p> Line Please is perfect for:
-            <ul>
-                <li>Speeches</li>
-                <li>Monologues</li>
-                <li>Poetry</li>
-                <li>Words to a song</li>
-                <li>Speaking to your boss/significant other/crush/etc.</li>
-            </ul>
+            <br/><br/>
+            Speeches<br/>
+            Monologues<br/>
+            Poetry<br/>
+            Words to a song<br/>
+            Speaking to your boss/significant other/crush/etc.<br/>
+            <br/>
             Hit <Link to='/upload' className="link">Upload new</Link> to upload your text and start practicing! 
             </p>
 

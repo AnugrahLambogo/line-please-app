@@ -30,7 +30,7 @@ getTitleNames = () => {
   displayTitleNames = (titles) => {
 
     return (
-      titles.map(text => <li>{text.title}<button onClick={e => this.deleteText(text.id)}>DELETE</button></li>)
+      titles.map((text, index) => <li key={index}>{text.title}<button onClick={e => this.deleteText(text.id)}>DELETE</button></li>)
      
     )}
 

@@ -76,7 +76,7 @@ getTitleNames = () => {
 displayTitleNamesAsOptions = (titles) => {
 
   return (
-    titles.map(titleObj => <option>{titleObj.title}</option>)
+    titles.map(titleObj => <option key={titleObj.title}>{titleObj.title}</option>)
    
   )}
 
@@ -180,22 +180,19 @@ displayText = (text, lineOrSection) => {
       });
 
       if (this.state.theEnd === true) {
-        return (<li>THE END</li>)
+        return (<li key="end">THE END</li>)
       }
       else if (this.state.fullLine === false && lineOrSection === false) {
-        return (<li className="line"> {beginningArr.map(line => <p>{line}</p>)} </li>)
+        return (<li key="partialSection" className="line"> {beginningArr.map((line, index) => <p key={index}>{line}</p>)} </li>)
       }
-
       else if (this.state.fullLine === false && lineOrSection === true) {
-        return <li className="line"> {beginningArr[this.state.lineNum]} </li>
+        return <li key="partialLine" className="line"> {beginningArr[this.state.lineNum]} </li>
       }
-
       else if (lineOrSection === false) {
-         return (<li className="line"> {sectArr.map((line, index) => <p key={index}>{line}</p>)} </li>)
-          }
-         
+         return (<li key="fullSection" className="line"> {sectArr.map((line, index) => <p key={index}>{line}</p>)} </li>)
+          }    
       else {
-        return (<li className="line"> {sectArr[this.state.lineNum]} </li>)
+        return (<li key="fullLine" className="line"> {sectArr[this.state.lineNum]} </li>)
       }
       
   }
