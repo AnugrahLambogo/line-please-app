@@ -10,7 +10,7 @@ class telePrompt extends React.Component {
       lineNum: 0,
       lineOnly: false,
       running: false,
-      time: 0,
+      time: 3000,
       fullLine: true,
       chosenText: '',
       textTitles: [],
@@ -273,7 +273,7 @@ render() {
           
           <form>
           <label htmlFor="displayTime">How many seconds to display:</label>
-          <input type="number" name="displayTime" id="displayTime" onChange={this.updateTime}>
+          <input type="number" name="displayTime" id="displayTime" defaultValue="3" onChange={this.updateTime}>
           </input>
           </form>
 
