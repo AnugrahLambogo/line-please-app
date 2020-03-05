@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<section>
+  <a
+    href="/teleprompt"
+    onClick={[Function]}
+  >
+    <button>
+      Start Practicing
+    </button>
+  </a>
+  <a
+    href="/upload"
+    onClick={[Function]}
+  >
+    <button>
+      Upload New
+    </button>
+  </a>
+  <a
+    href="/listText"
+    onClick={[Function]}
+  >
+    <button>
+      View/Delete Texts
+    </button>
+  </a>
+</section>
+`;

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import TelePrompt from '../teleprompt'
 import renderer from 'react-test-renderer'
-import { exportAllDeclaration } from '@babel/types';
 
 describe('TelePrompt component', () =>{
 it('renders without crashing', () => {

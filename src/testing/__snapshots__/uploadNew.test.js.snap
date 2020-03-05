@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<section>
+  <h3>
+    Upload new oration
+  </h3>
+  <p>
+    Write or copy/paste the text you want to memorize below. Separate your text by 'sections' as you see fit, and make sure each 'line' is separated by an enter/return.
+  </p>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="textTitle"
+    >
+      Title:
+    </label>
+    <input
+      id="textTitle"
+      onChange={[Function]}
+      type="text"
+    />
+    <section
+      className="uploadForm"
+    >
+      <label
+        htmlFor="section1"
+      >
+         Section 
+        1
+        :
+      </label>
+      <textarea
+        className="sections"
+        name="section1"
+        onChange={[Function]}
+        type="text"
+      />
+    </section>
+    <section
+      className="uploadForm"
+    >
+      <label
+        htmlFor="section2"
+      >
+         Section 
+        2
+        :
+      </label>
+      <textarea
+        className="sections"
+        name="section2"
+        onChange={[Function]}
+        type="text"
+      />
+    </section>
+    <section
+      className="uploadForm"
+    >
+      <label
+        htmlFor="section3"
+      >
+         Section 
+        3
+        :
+      </label>
+      <textarea
+        className="sections"
+        name="section3"
+        onChange={[Function]}
+        type="text"
+      />
+    </section>
+    <button
+      className="uploadButton"
+      onClick={[Function]}
+    >
+      Add another section
+    </button>
+    <button
+      className="uploadButton"
+      onClick={[Function]}
+    >
+      Remove section
+    </button>
+    <button
+      className="uploadButton"
+      type="submit"
+    >
+      Create!
+    </button>
+  </form>
+</section>
+`;
