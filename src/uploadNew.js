@@ -33,7 +33,7 @@ renderSections = () => {
 return (
 Array.from({length: this.state.numOfSections})
      .map((e, index) => (
-              <section className="uploadForm">        
+              <section key={index} className="uploadForm">        
               <label htmlFor={'section'+(index+1)}> Section {index + 1}:</label>
               <textarea
               type="text" 

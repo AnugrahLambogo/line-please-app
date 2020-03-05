@@ -33,3 +33,35 @@ select {
   border: 1px solid black;
   margin-left: 3px;
 }
+
+#landing {
+  width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#landing p {
+  text-align: left;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.link:hover {
+  color: darkcyan;
+}
+
+
+@media only screen and (min-width: 500px){
+
+#landing {
+  width: 500px;
+}
+
+
+
+}

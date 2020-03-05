@@ -5,23 +5,24 @@ import newAccount from './newAccount';
 import telePrompt from './telePrompt';
 import listText from './listText';
 import { Route } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 class App extends React.Component {
-
-  handleUploadNew = (newOration) => {
-
-  }
-
 
   render(){
 
   return (
     <main className='App'>
     <header role="banner">
-            <h1>Line Please!</h1>
+       <Link to="/" className="link"><h1>Line Please!</h1></Link>
              <p>Making sure you know your words</p>
     </header>
-    <Route path='/' component={landing} />
+    <section>
+        <Link to='/teleprompt'><button>Start Practicing</button></Link> 
+        <Link to='/upload'><button>Upload New</button></Link>
+        <Link to='/listText'><button>View/Delete Texts</button></Link>
+    </section>
+    <Route exact path='/' component={landing} />
     <Route path='/new-account' component={newAccount} />
     <Route path='/upload' component={uploadNew} />
     <Route path='/teleprompt' component={telePrompt} />

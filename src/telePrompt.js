@@ -191,7 +191,7 @@ displayText = (text, lineOrSection) => {
       }
 
       else if (lineOrSection === false) {
-         return (<li className="line"> {sectArr.map(line => <p>{line}</p>)} </li>)
+         return (<li className="line"> {sectArr.map((line, index) => <p key={index}>{line}</p>)} </li>)
           }
          
       else {

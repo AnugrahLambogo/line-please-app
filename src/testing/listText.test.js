@@ -4,7 +4,7 @@ import ListText from '../listText';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from "react-test-renderer";
 
-it('renders without crashing', () => {
+it('renders without crashing', () => { 
   const div = document.createElement('div');
   ReactDOM.render(<BrowserRouter>
     <ListText />

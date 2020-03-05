@@ -2,13 +2,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const landing = () => {
-
     return (
-        <section>
-        <Link to='/teleprompt'><button>Start Practicing</button></Link> 
-        <Link to='/upload'><button>Upload New</button></Link>
-        <Link to='/listText'><button>View/Delete Texts</button></Link>
-        </section>
+       <div id="landing" >
+           <h3>Welcome to Line Please!</h3>
+           <p>Do you need to memorize anything? <br/>
+            Line Please helps users commit any blocks of text into memory!
+            Using a teleprompt-like tool, you can have your text be displayed
+            in chronological order as you recite and memorize it to heart.<br/><br/>
+            As you become more familiar with your text, you can make it only show 
+            the first two words of each line--prompting you to recall the rest of the line.
+            </p>
+           <p> Line Please is perfect for:
+            <ul>
+                <li>Speeches</li>
+                <li>Monologues</li>
+                <li>Poetry</li>
+                <li>Words to a song</li>
+                <li>Speaking to your boss/significant other/crush/etc.</li>
+            </ul>
+            Hit <Link to='/upload' className="link">Upload new</Link> to upload your text and start practicing! 
+            </p>
+
+            <h3>Happy Memorizing!</h3>
+       </div>
     )
 }
 

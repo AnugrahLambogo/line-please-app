@@ -4,7 +4,7 @@ import App from '../App';
 import { BrowserRouter } from "react-router-dom";
 import renderer from "react-test-renderer";
 
-describe("App", () => {
+describe("App", () => { 
   it("renders without crashing", () => {
     Object.defineProperty(window, "matchMedia", {
       writable: true,
