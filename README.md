@@ -33,4 +33,6 @@ In order to run this react app on your local environment:
 
 ## Screenshots
 
+![Image - dashboard](https://github.com/thinkful-ei-iguana/line-please-app/blob/master/public/Screen%20Shot%202.png?raw=true "dashboard")
 ![Image - dashboard](https://github.com/thinkful-ei-iguana/line-please-app/blob/master/public/Screen%20Shot%201.png?raw=true "dashboard")
+![Image - dashboard](https://github.com/thinkful-ei-iguana/line-please-app/blob/master/public/Screen%20Shot%203.png?raw=true "dashboard")
