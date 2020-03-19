@@ -58,7 +58,7 @@ select {
 }
 
 .link:hover {
-  color: darkcyan;
+  text-decoration: underline;
 }
 
 .listTextList {
@@ -96,6 +96,15 @@ select {
 .logo:hover {
   background-color: rgb(253, 255, 126);
   border-radius: 10px;
+}
+
+.appName {
+  font-weight: bold;
+}
+
+.landingList{
+  list-style: circle;
+  margin-left: 20px;
 }
 
 
