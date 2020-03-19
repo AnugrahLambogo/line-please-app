@@ -14,7 +14,9 @@ class App extends React.Component {
   return (
     <main className='App'>
     <header role="banner">
-       <Link to="/" className="link"><h1>Line Please!</h1></Link>
+       <Link to="/" className="link">
+         <img className="logo" src="LogoLinePlease.png" alt="Logo of the Line Please! app" ></img>
+         </Link>
              <p>Making sure you know your words</p>
     </header>
     <section>

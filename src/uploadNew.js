@@ -34,7 +34,7 @@ return (
 Array.from({length: this.state.numOfSections})
      .map((e, index) => (
               <section key={index} className="uploadForm">        
-              <label htmlFor={'section'+(index+1)}> Section {index + 1}:</label>
+              <label className="sectionLabel" htmlFor={'section'+(index+1)}> Section {index + 1}:</label>
               <textarea
               type="text" 
               name={'section'+(index+1)}
@@ -63,7 +63,7 @@ render(){
           </p>
 
           <form onSubmit={this.sendText}>
-            <label htmlFor="textTitle">Title:</label>
+            <label id="titleLabel" htmlFor="textTitle">Title:</label>
             <input id="textTitle" type="text" onChange={e => this.setState({title: e.target.value})}></input>
             
             {this.renderSections()} 
