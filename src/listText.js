@@ -30,7 +30,7 @@ getTitleNames = () => {
   displayTitleNames = (titles) => {
 
     return (
-      titles.map((text, index) => <li key={index}>{text.title}<button onClick={e => this.deleteText(text.id)}>DELETE</button></li>)
+      titles.map((text, index) => <li className="textListItem" key={index}><div className="textTitles">{text.title}</div><div className="deleteButton"><button onClick={e => this.deleteText(text.id)}>DELETE</button></div></li>)
      
     )}
 
@@ -52,7 +52,7 @@ componentDidMount () {
 
 render () {
     return (
-        <ul>
+        <ul className="listTextList">
         {this.displayTitleNames(this.state.textTitles)}
         </ul>
         
