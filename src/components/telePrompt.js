@@ -91,6 +91,23 @@ class telePrompt extends React.Component {
     let lineMax = this.state.data[currSect].length - 1;
     let sectMax = sectionNames.length - 1;
 
+    if (this.state.data === dummyStore) {
+      alert("Switch to a text first!")
+      return;
+    }
+
+    if (this.state.lineOnly === false && this.state.sectNum === 1) {
+      this.setState(
+        { theEnd: true }
+      )
+    }
+
+    if (this.state.lineOnly === true && this.state.lineNum === 1) {
+      this.setState(
+        { theEnd: true }
+      )
+    }
+
     if (this.state.lineOnly === false && this.state.sectNum === sectMax) {
       this.setState(
         { theEnd: true }
@@ -132,8 +149,12 @@ class telePrompt extends React.Component {
 
 
   lastPart = () => {
-    if (this.state.lineNum === 0 && this.state.sectNum === 0) {
+    if (this.state.data === dummyStore) {
+      alert("Switch to a text first!")
+      return;
+    }
 
+    if (this.state.lineNum === 0 && this.state.sectNum === 0) {
     }
 
     else if (this.state.lineNum === 0) {
@@ -161,15 +182,11 @@ class telePrompt extends React.Component {
     }
   }
 
-
-
   toggleLineOrSection = () => {
     this.setState(
       { lineOnly: !this.state.lineOnly }
     )
   }
-
-
 
   displayText = (text, lineOrSection) => {
     let sectionKeys = Object.keys(text);
