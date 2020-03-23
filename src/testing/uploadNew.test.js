@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UploadNew from '../uploadNew';
+import UploadNew from '../components/uploadNew';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from "react-test-renderer";
 

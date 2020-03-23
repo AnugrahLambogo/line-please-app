@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import TelePrompt from '../teleprompt'
+import TelePrompt from '../components/teleprompt'
 import renderer from 'react-test-renderer'
 
 describe('TelePrompt component', () =>{

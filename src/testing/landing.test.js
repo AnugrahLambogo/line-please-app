@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from '../landing';
+import Landing from '../components/landing';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from "react-test-renderer";
 

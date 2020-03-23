@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListText from '../listText';
+import ListText from '../components/listText';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from "react-test-renderer";
 
