@@ -1,6 +1,6 @@
 import React from 'react';
-import './styling/uploadNew.css';
-import config from './config';
+import '../styling/uploadNew.css';
+import config from '../config';
 
 
 class uploadNew extends React.Component {

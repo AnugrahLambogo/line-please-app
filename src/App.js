@@ -1,9 +1,9 @@
 import React from 'react';
-import uploadNew from './uploadNew';
-import landing from './landing';
-import newAccount from './newAccount';
-import telePrompt from './telePrompt';
-import listText from './listText';
+import uploadNew from './components/uploadNew';
+import landing from './components/landing';
+import newAccount from './components/newAccount';
+import telePrompt from './components/telePrompt';
+import listText from './components/listText';
 import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
-import config from './config';
+import config from '../config';
 import React from 'react';
-import './styling/telePrompt.css';
-import dummyStore from './DummyStore';
+import '../styling/telePrompt.css';
+import dummyStore from '../DummyStore';
 
 class telePrompt extends React.Component {
   state = {
