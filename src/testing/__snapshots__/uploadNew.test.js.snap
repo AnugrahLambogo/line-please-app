@@ -13,6 +13,7 @@ exports[`renders the UI as expected 1`] = `
   >
     <label
       htmlFor="textTitle"
+      id="titleLabel"
     >
       Title:
     </label>
@@ -25,6 +26,7 @@ exports[`renders the UI as expected 1`] = `
       className="uploadForm"
     >
       <label
+        className="sectionLabel"
         htmlFor="section1"
       >
          Section 
@@ -42,6 +44,7 @@ exports[`renders the UI as expected 1`] = `
       className="uploadForm"
     >
       <label
+        className="sectionLabel"
         htmlFor="section2"
       >
          Section 
@@ -59,6 +62,7 @@ exports[`renders the UI as expected 1`] = `
       className="uploadForm"
     >
       <label
+        className="sectionLabel"
         htmlFor="section3"
       >
          Section 
