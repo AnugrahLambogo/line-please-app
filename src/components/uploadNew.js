@@ -18,7 +18,7 @@ class uploadNew extends React.Component {
 
   sendText = (e) => {
     const uploadText = this.state
-    
+    e.preventDefault();
     if (!uploadText.section1 || uploadText.title === '') {
       alert("Can't submit a text without a Title or Content!")
       return;
