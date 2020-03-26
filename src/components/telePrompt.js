@@ -235,6 +235,12 @@ class telePrompt extends React.Component {
 
   toggleTimer = (e) => {
     e.preventDefault();
+
+    if (this.state.data === dummyStore) {
+      alert("Switch to a text first!")
+      return;
+    }
+
     this.setState({
       running: !this.state.running
     });

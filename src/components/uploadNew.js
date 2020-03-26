@@ -18,6 +18,11 @@ class uploadNew extends React.Component {
 
   sendText = (e) => {
     const uploadText = this.state
+    
+    if (!uploadText.section1 || uploadText.title === '') {
+      alert("Can't submit a text without a Title or Content!")
+      return;
+    }
 
     fetch(`${config.API_ENDPOINT}/upload`, {
       method: "POST",
@@ -25,9 +30,9 @@ class uploadNew extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(uploadText)
-    })
+    })  
+    this.handleCreationSuccess()
   }
-
 
   renderSections = () => {
     return (
@@ -44,6 +49,11 @@ class uploadNew extends React.Component {
           </section>
         )))
   }
+
+  handleCreationSuccess = () => {
+    alert('successfully created!')
+    this.props.history.push('/listText')
+  };
 
   increaseSection = (e) => {
     e.preventDefault();
